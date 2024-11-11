@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Estibas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* CSS básico para ocultar secciones y mostrar el submenú */
+        .estiba-section {
+            display: none;
+        }
+
+        /* Mostrará la sección activa */
+        .estiba-section.active {
+            display: block;
+        }
+
+        /* Estilos para el menú y submenú */
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav > li {
+            position: relative;
+        }
+
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        nav li:hover .submenu {
+            display: block;
+        }
+
+        .submenu li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Gestión de Estibas</h1>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" aria-label="ESTIBAS">ESTIBAS</a>
+                    <ul class="submenu">
+                        <li><a href="#pequeña" class="menu-item" onclick="showSection('pequeña')">Nueva Pequeña</a></li>
+                        <li><a href="#mediana" class="menu-item" onclick="showSection('mediana')">Nueva Mediana</a></li>
+                        <li><a href="#grande" class="menu-item" onclick="showSection('grande')">Nueva Grande</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <section id="pequeña" class="estiba-section">
+            <h2>Estiba Pequeña</h2>
+            <p>Detalles sobre la estiba pequeña: dimensiones, capacidad y uso recomendado.</p>
+            <label>Cantidad de tablas</label>
+            <input type="number" placeholder="Digite cantidad de tablas">
+            <label>Cantidad de tacos</label>
+            <input type="number" placeholder="Digite cantidad de tacos">
+        </section>
+
+        <section id="mediana" class="estiba-section">
+            <h2>Estiba Mediana</h2>
+            <p>Detalles sobre la estiba mediana: dimensiones, capacidad y uso recomendado.</p>
+            <label>Cantidad de tablas</label>
+            <input type="number" placeholder="Digite cantidad de tablas">
+            <label>Cantidad de tacos</label>
+            <input type="number" placeholder="Digite cantidad de tacos">
+        </section>
+
+        <section id="grande" class="estiba-section">
+            <h2>Estiba Grande</h2>
+            <p>Detalles sobre la estiba grande: dimensiones, capacidad y uso recomendado.</p>
+            <label>Cantidad de tablas</label>
+            <input type="number" placeholder="Digite cantidad de tablas">
+            <label>Cantidad de tacos</label>
+            <input type="number" placeholder="Digite cantidad de tacos">
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Gestión de Estibas</p>
+        </footer>
+    </div>
+
+    <script>
+        // Función para mostrar la sección seleccionada y ocultar las demás
+        function showSection(sectionId) {
+            // Oculta todas las secciones
+            document.querySelectorAll('.estiba-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            // Muestra la sección seleccionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
